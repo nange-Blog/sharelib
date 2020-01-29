@@ -9,7 +9,7 @@ def gitlab = new org.devops.gitlab()
 def k8s = new org.devops.kubernetes()
 
 pipeline{
-   agent { node { label "build" }}
+   agent any
    
    stages{
    
@@ -27,4 +27,29 @@ pipeline{
            }
        }
    }
+   post {
+     always{
+         script{
+             println("always")
+         }
+     }
+
+     success{
+         script{
+             println("success")
+         }
+
+     }
+     failure{
+         script{
+             println("failure")
+         }
+     }
+
+     aborted{
+         script{
+             println("aborted")
+         }
+
+     }
 }
