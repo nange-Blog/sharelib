@@ -10,3 +10,6 @@ def PrintMes(value,color){
         println(colors[color])
     }
 }
+def myPrint(context){
+    println(context)
+}
