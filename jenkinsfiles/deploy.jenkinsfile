@@ -10,7 +10,6 @@ pipeline{
    agent any
    
    stages{
-   
        stage("Deploy"){
             steps{
                 script{
@@ -21,30 +20,28 @@ pipeline{
                 }  
            }
        }
-   }
-   post {
-     always{
-         script{
-             println("always")
-         }
-     }
+    }
 
-     success{
-         script{
-             println("success")
-         }
-
-     }
-     failure{
-         script{
-             println("failure")
-         }
-     }
-
-     aborted{
-         script{
-             println("aborted")
-         }
-
-     }
+    post {
+        always{
+            script{
+                println("always")
+            }
+        }
+        success{
+            script{
+                println("success")
+            }
+        }
+        failure{
+            script{
+                println("failure")
+            }
+        }
+        aborted{
+            script{
+                println("aborted")
+            }
+        }
+    }
 }
